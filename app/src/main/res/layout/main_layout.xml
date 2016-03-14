@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+			  xmlns:tools="http://schemas.android.com/tools"
+			  android:id="@+id/container"
+	android:layout_width="match_parent"
+	android:layout_height="match_parent"
+	android:orientation="horizontal">
+
+	<fragment
+		android:layout_width="0dp"
+		android:layout_height="match_parent"
+		android:layout_weight="1"
+		android:name="cyprien.clerc.channelmessaging.fragments.ChannelListFragment"
+		android:id="@+id/channel_List_fragment"
+		tools:layout="@layout/fragment_channel_list"/>
+
+	<!--<fragment-->
+		<!--android:layout_width="0dp"-->
+		<!--android:layout_height="match_parent"-->
+		<!--android:layout_weight="3"-->
+		<!--android:name="cyprien.clerc.channelmessaging.fragments.ChannelFragment"-->
+		<!--android:id="@+id/fragment_channel"-->
+		<!--android:layout_gravity="center_vertical"-->
+		<!--tools:layout="@layout/fragment_channel"/>-->
+
+</LinearLayout>
