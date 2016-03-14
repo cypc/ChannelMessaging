@@ -1,12 +1,15 @@
 package cyprien.clerc.channelmessaging.fragments;
 
+import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.AdapterView;
 import android.widget.ListView;
+import android.widget.Toast;
 
 import com.google.gson.Gson;
 
@@ -26,7 +29,7 @@ import cyprien.clerc.channelmessaging.webservice.onWsRequestListener;
  * Created by cclerc on 07/03/2016.
  */
 
-public class ChannelListFragment extends Fragment implements onWsRequestListener {
+public class ChannelListFragment extends Fragment implements onWsRequestListener{
 
 	private static final String CHANNEL_MESSAGING_PREFERENCES = "ChannelMessagingPreferences";
 	private ListView lvMyListView;
@@ -75,8 +78,9 @@ public class ChannelListFragment extends Fragment implements onWsRequestListener
 		//lvFragment = (ListView)v.findViewById(R.id.lvFragment);
 		lvMyListView.setAdapter(new ChannelAdapter(getActivity().getApplicationContext(), channelsResponse.getChannels()));
 		//lvMyListView.setOnItemClickListener(this);
-	}
 
+		lvMyListView.setOnItemClickListener((ChannelMainActivity) getActivity());
+	}
 }
 
 

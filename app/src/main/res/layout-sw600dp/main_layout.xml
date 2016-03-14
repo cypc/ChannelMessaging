@@ -3,7 +3,8 @@
 	android:id="@+id/container"
 	android:layout_width="match_parent"
 	android:layout_height="match_parent"
-	android:orientation="horizontal">
+	android:orientation="horizontal"
+			  android:baselineAligned="false">
 
 	<fragment
 		android:layout_width="0dp"
@@ -15,7 +16,7 @@
 	<fragment
 		android:layout_width="0dp"
 		android:layout_height="match_parent"
-		android:layout_weight="3"
+		android:layout_weight="1"
 		android:name="cyprien.clerc.channelmessaging.fragments.ChannelFragment"
 		android:id="@+id/fragment_channel"
 		android:layout_gravity="center_vertical" />
