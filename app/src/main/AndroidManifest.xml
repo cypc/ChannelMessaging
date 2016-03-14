@@ -9,8 +9,9 @@
 		android:icon="@mipmap/ic_launcher"
 		android:label="@string/app_name"
 		android:theme="@style/AppTheme">
+
 		<activity
-			android:name=".LoginActivity"
+			android:name=".login.LoginActivity"
 			android:label="@string/app_name">
 			<intent-filter>
 				<action android:name="android.intent.action.MAIN"/>
@@ -18,11 +19,25 @@
 				<category android:name="android.intent.category.LAUNCHER"/>
 			</intent-filter>
 		</activity>
+
 		<activity
-			android:name=".ChannelListActivity"
+			android:name=".channellist.ChannelListActivity"
 			android:label="@string/title_activity_channel_list"
 			android:theme="@style/AppTheme.NoActionBar">
 		</activity>
+
+		<activity android:name=".channel.ChannelActivity"
+			android:label="ChannelListActivity">
+		</activity>
+
+		<activity android:name=".fragments.ChannelMainActivity"
+			android:label="ChannelMainActivity">
+		</activity>
+
+		<activity android:name=".fragments.ChannelDetailActivity"
+			android:label="ChannelDetailActivity">
+		</activity>
+
 	</application>
 
 </manifest>
