@@ -18,13 +18,14 @@ import org.apache.http.message.BasicNameValuePair;
 import java.util.ArrayList;
 import java.util.List;
 
+import cyprien.clerc.channelmessaging.NotificationActivity;
 import cyprien.clerc.channelmessaging.channellist.ChannelListActivity;
 import cyprien.clerc.channelmessaging.fragments.ChannelMainActivity;
 import cyprien.clerc.channelmessaging.webservice.NetworkResultProvider;
 import cyprien.clerc.channelmessaging.R;
 import cyprien.clerc.channelmessaging.webservice.onWsRequestListener;
 
-public class LoginActivity extends AppCompatActivity implements View.OnClickListener, onWsRequestListener {
+public class LoginActivity extends NotificationActivity implements View.OnClickListener, onWsRequestListener {
 
 	private EditText txt_id;
 	private EditText txt_password;

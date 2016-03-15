@@ -1,5 +1,9 @@
 package cyprien.clerc.channelmessaging.fragments;
 
+import android.content.BroadcastReceiver;
+import android.content.Context;
+import android.content.Intent;
+import android.content.IntentFilter;
 import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
@@ -37,10 +41,20 @@ public class ChannelFragment extends Fragment implements onWsRequestListener, Ad
 	private View v;
 	private ListView messageList;
 	private String token;
+	public long channelId;
+
+	private BroadcastReceiver receiver;
 
 	@Override
 	public View onCreateView(LayoutInflater inflater, ViewGroup	container, Bundle savedInstanceState) {
 		this.v = inflater.inflate(R.layout.fragment_channel, container);
+
+		this.receiver = new BroadcastReceiver() {
+			@Override
+			public void onReceive(Context context, Intent intent) {
+				displayMessages();
+			}
+		};
 
 		// token
 		SharedPreferences settings = getActivity().getSharedPreferences(CHANNEL_MESSAGING_PREFERENCES, 0);
@@ -49,7 +63,7 @@ public class ChannelFragment extends Fragment implements onWsRequestListener, Ad
 		return v;
 	}
 
-	public void displayMessages(long channelId) {
+	public void displayMessages() {
 		List<NameValuePair> params = new ArrayList<NameValuePair>(2);
 		params.add(new BasicNameValuePair("accesstoken", token));
 		params.add(new BasicNameValuePair("channelid", "" + channelId));
@@ -87,6 +101,16 @@ public class ChannelFragment extends Fragment implements onWsRequestListener, Ad
 
 	@Override
 	public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
+
+	}
+
+	@Override
+	public void onResume() {
+		super.onResume();
+
+		IntentFilter filter = new IntentFilter("com.google.android.c2dm.intent.RECEIVE");
+
+		getActivity().getApplicationContext().registerReceiver(this.receiver, filter);
 
 	}
 }

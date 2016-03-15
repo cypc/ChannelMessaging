@@ -39,8 +39,8 @@ public class ChannelMainActivity extends AppCompatActivity implements View.OnCli
 			i.putExtra("channelId",id+1);
 			startActivity(i);
 		} else {
-
-			channel.displayMessages(id+1);
+			channel.channelId = id+1;
+			channel.displayMessages();
 //
 //			Intent i = new Intent(getApplicationContext(),ChannelFragment.class);
 //			i.putExtra("channelId",id+1);
