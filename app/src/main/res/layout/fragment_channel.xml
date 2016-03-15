@@ -1,13 +1,37 @@
 <?xml version="1.0" encoding="utf-8"?>
-
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
 			  android:orientation="vertical"
 			  android:layout_width="match_parent"
-			  android:layout_height="match_parent">
-	<TextView
-		android:layout_width="wrap_content"
-		android:layout_height="wrap_content"
-		android:id="@+id/textView"
-		android:layout_gravity="center_horizontal" />
-</LinearLayout>
+			  android:layout_height="match_parent"
+			  android:weightSum="1">
 
+	<ListView
+		android:layout_width="match_parent"
+		android:layout_height="210dp"
+		android:id="@+id/messageList"
+		android:layout_gravity="center_horizontal"
+		android:layout_weight="0.92" />
+
+	<LinearLayout
+		android:orientation="horizontal"
+		android:layout_width="match_parent"
+		android:layout_height="wrap_content"
+		android:layout_gravity="center_vertical"
+		android:layout_marginLeft="5dp"
+		android:layout_marginRight="5dp">
+
+		<EditText
+			android:layout_width="80dp"
+			android:layout_height="wrap_content"
+			android:id="@+id/textMessage"
+			android:layout_weight="0.90" />
+
+		<Button
+			android:layout_width="wrap_content"
+			android:layout_height="wrap_content"
+			android:text="Envoyer"
+			android:id="@+id/buttonEnvoyer"
+			android:layout_weight="0.07" />
+	</LinearLayout>
+
+</LinearLayout>

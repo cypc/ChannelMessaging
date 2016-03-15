@@ -3,6 +3,7 @@ package cyprien.clerc.channelmessaging.fragments;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.ActionBarActivity;
+import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ListView;
@@ -15,7 +16,7 @@ import cyprien.clerc.channelmessaging.webservice.onWsRequestListener;
  * Created by cclerc on 08/03/2016.
  */
 
-public class ChannelMainActivity extends ActionBarActivity implements View.OnClickListener, onWsRequestListener, AdapterView.OnItemClickListener{
+public class ChannelMainActivity extends AppCompatActivity implements View.OnClickListener, onWsRequestListener, AdapterView.OnItemClickListener{
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
@@ -38,7 +39,9 @@ public class ChannelMainActivity extends ActionBarActivity implements View.OnCli
 			i.putExtra("channelId",id+1);
 			startActivity(i);
 		} else {
-			//channel.fillTextView(channelList.listItems[position]);
+			Intent i = new Intent(getApplicationContext(),ChannelFragment.class);
+			i.putExtra("channelId",id+1);
+			startActivity(i);
 		}
 	}
 
