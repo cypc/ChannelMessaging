@@ -57,10 +57,6 @@ public class ChannelListFragment extends Fragment implements onWsRequestListener
 	@Override
 	public void onActivityCreated(Bundle savedInstanceState) {
 		super.onActivityCreated(savedInstanceState);
-
-		//lvFragment.setAdapter(new ArrayAdapter(getActivity(),
-		//android.R.layout.simple_list_item_1, listItems));
-		//lvFragment.setOnItemClickListener((MainActivity)getActivity());
 	}
 
 	@Override
@@ -75,9 +71,9 @@ public class ChannelListFragment extends Fragment implements onWsRequestListener
 
 		//list view
 		lvMyListView = (ListView) this.v.findViewById(R.id.myListView);
-		//lvFragment = (ListView)v.findViewById(R.id.lvFragment);
+
 		lvMyListView.setAdapter(new ChannelAdapter(getActivity().getApplicationContext(), channelsResponse.getChannels()));
-		//lvMyListView.setOnItemClickListener(this);
+
 
 		lvMyListView.setOnItemClickListener((ChannelMainActivity) getActivity());
 	}
